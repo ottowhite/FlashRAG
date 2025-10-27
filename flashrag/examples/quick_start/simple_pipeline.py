@@ -10,9 +10,9 @@ parser.add_argument("--retriever_path", type=str)
 args = parser.parse_args()
 
 config_dict = {
-    "data_dir": "dataset/",
-    "index_path": "indexes/e5_Flat.index",
-    "corpus_path": "indexes/general_knowledge.jsonl",
+    "data_dir": "flashrag/examples/quick_start/dataset/",
+    "index_path": "flashrag/examples/quick_start/indexes/e5_Flat.index",
+    "corpus_path": "flashrag/examples/quick_start/indexes/general_knowledge.jsonl",
     "model2path": {"e5": args.retriever_path, "llama3-8B-instruct": args.model_path},
     "generator_model": "llama3-8B-instruct",
     "retrieval_method": "e5",
