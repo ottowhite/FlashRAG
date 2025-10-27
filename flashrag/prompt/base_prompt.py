@@ -89,6 +89,10 @@ class PromptTemplate:
                 half = int(self.max_input_len / 2)
                 truncated_messages = self._get_tokenizer().decode(tokenized_prompt[:half]) + self._get_tokenizer().decode(tokenized_prompt[-half:])
 
+            print()
+            for i, message in enumerate(truncated_messages):
+                print(i, message)
+            print()
             return truncated_messages
 
         else:

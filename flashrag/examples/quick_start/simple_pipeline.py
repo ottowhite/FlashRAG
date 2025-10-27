@@ -3,6 +3,9 @@ from flashrag.config import Config
 from flashrag.utils import get_dataset
 from flashrag.pipeline import SequentialPipeline
 from flashrag.prompt import PromptTemplate
+from dotenv import load_dotenv
+
+load_dotenv()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--model_path", type=str)
@@ -17,7 +20,7 @@ config_dict = {
     "generator_model": "llama3-8B-instruct",
     "retrieval_method": "e5",
     "metrics": ["em", "f1", "acc"],
-    "retrieval_topk": 1,
+    "retrieval_topk": 5,
     "save_intermediate_data": True,
 }
 
@@ -25,12 +28,14 @@ config = Config(config_dict=config_dict)
 
 all_split = get_dataset(config)
 test_data = all_split["test"]
+config["framework"] = "openai"
 prompt_templete = PromptTemplate(
     config,
     system_prompt="Answer the question based on the given document. \
                     Only give me the answer and do not output any other words. \
                     \nThe following are given documents.\n\n{reference}",
     user_prompt="Question: {question}\nAnswer:",
+
 )
 
 
