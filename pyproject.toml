@@ -1,2 +1,32 @@
-[tool.ruff.lint]
-extend-select = ["W291", "W293"]
+[project]
+name = "flashrag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "base58>=2.1.1",
+    "bm25s[core]==0.2.1",
+    "chonkie>=1.0.2,<1.1.0",
+    "datasets>=4.3.0",
+    "faiss-cpu>=1.12.0",
+    "fschat>=0.2.36",
+    "gradio>=5.0.0",
+    "jieba>=0.42.1",
+    "langid>=1.1.6",
+    "nltk>=3.9.2",
+    "numpy>=2.3.4",
+    "openai>=2.6.1",
+    "peft>=0.17.1",
+    "pyyaml>=6.0.3",
+    "rank-bm25>=0.2.2",
+    "rouge>=1.0.1",
+    "rouge-chinese>=1.0.3",
+    "spacy>=3.8.7",
+    "streamlit>=1.50.0",
+    "termcolor>=3.2.0",
+    "tiktoken>=0.12.0",
+    "torch>=2.9.0",
+    "tqdm>=4.67.1",
+    "transformers>=4.40.0",
+]
